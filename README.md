@@ -1,4 +1,4 @@
-# 🧠 Open Trivia Quiz (Terminal Edition) - v1.0
+# 🧠 Open Trivia Quiz (Terminal Edition) - v1.1
 
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue?logo=python)
 ![Version](https://img.shields.io/badge/Version-1.0-green)
@@ -12,8 +12,8 @@ This version focuses on simplicity — it runs instantly, fetches random questio
 
 ---
 
-## 🚀 Features (v1.0)
-- ✅ Fetches 10 random multiple-choice questions
+## 🚀 Features (v1.1)
+- ✅ Player can choose the number of questions
 - ✅ Runs directly from the terminal — no menus or setup needed
 - ✅ Displays your final score after the quiz
 - ✅ Clean, minimal design for testing and learning purposes
