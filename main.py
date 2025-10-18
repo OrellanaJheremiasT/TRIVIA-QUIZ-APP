@@ -13,10 +13,30 @@ def get_questions(amount=10):
     response = requests.get(url, params=params)
     return response.json()["results"]
 
+def get_question_count():
+    while True:
+        try:
+            clear()
+            print("=== OPEN TRIVIA QUIZ ===\n")
+            count = int(input("How many questions would you like? (1-50): "))
+            if 1 <= count <= 50:
+                return count
+            else:
+                print("Please enter a number between 1 and 50.")
+                time.sleep(1.5)
+        except ValueError:
+            print("Please enter a valid number.")
+            time.sleep(1.5)
+
+
+
 def run_quiz():
     clear()
     print("=== OPEN TRIVIA QUIZ ===\n")
-    questions = get_questions(10)
+
+    questions_count = get_question_count()
+
+    questions = get_questions(questions_count)
     score = 0
 
     for i, q in enumerate(questions, 1):
