@@ -67,7 +67,6 @@ These include:
 - 🎮 Menu system with multiple play modes
 - 📊 Progress bar and scoring animations
 - 📈 Question history and statistics
-- ⚙️ Configurable settings and persistent player profiles
 
 ---
 
