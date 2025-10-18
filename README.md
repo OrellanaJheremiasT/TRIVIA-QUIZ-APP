@@ -41,49 +41,53 @@ This version focuses on simplicity — it runs instantly, fetches random questio
 ```bash
 git clone https://github.com/OrellanaJheremiasT/TRIVIA-QUIZ-APP.git
 cd TRIVIA-QUIZ-APP
-Install the required dependency:
-
-bash
+```
+2. Install the required dependency:
+```bash
 pip install requests
-Usage
+```
+
+---
+
+## Usage
 Run the game with a single command:
 
-bash
+```bash
 python quiz.py
+```
 The game will immediately start with 10 random trivia questions. Answer each question by typing the letter of your choice (a, b, c, d).
 
-🧩 Planned Features
-Future updates will be added as issues in this repository.
+---
+
+## 🧩 Planned Features
+Future updates will be added as issues in this repository.  
 These include:
 
-🔄 Custom quiz options (number of questions, difficulty, categories)
+- 🔄 Custom quiz options (number of questions, difficulty, categories)
+- 🎮 Menu system with multiple play modes
+- 📊 Progress bar and scoring animations
+- 📈 Question history and statistics
+- ⚙️ Configurable settings and persistent player profiles
 
-🎮 Menu system with multiple play modes
+---
 
-📊 Progress bar and scoring animations
-
-📈 Question history and statistics
-
-⚙️ Configurable settings and persistent player profiles
-
-🤝 Contributing
+## 🤝 Contributing
 This is a beta version! Feel free to:
 
-Report bugs and issues
+- Report bugs and issues
+- Suggest new features
+- Submit pull requests
+- Fork and customize for your own projects
 
-Suggest new features
+Check the **Issues** section to see what's being worked on or to report problems.
 
-Submit pull requests
+---
 
-Fork and customize for your own projects
-
-Check the Issues section to see what's being worked on or to report problems.
-
-🧾 License
+## 🧾 License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-Version: 1.0 (Beta)
-Author: OrellanaJheremiasT
-Repository: github.com/OrellanaJheremiasT/TRIVIA-QUIZ-APP
+**Version:** 1.0 (Beta)  
+**Author:** OrellanaJheremiasT  
+**Repository:** [github.com/OrellanaJheremiasT/TRIVIA-QUIZ-APP](https://github.com/OrellanaJheremiasT/TRIVIA-QUIZ-APP)
 
-Future improvements will be tracked in the Issues section.
+Future improvements will be tracked in the **Issues** section.
