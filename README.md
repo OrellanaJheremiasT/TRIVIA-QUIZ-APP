@@ -1,7 +1,7 @@
-# 🧠 Open Trivia Quiz (Terminal Edition) - v1.1
+# 🧠 Open Trivia Quiz (Terminal Edition) - v1.1.1
 
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue?logo=python)
-![Version](https://img.shields.io/badge/Version-1.1-green)
+![Version](https://img.shields.io/badge/Version-1.1.1-green)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
 ![Language](https://img.shields.io/badge/Language-English-lightgrey)
 ![Status](https://img.shields.io/badge/Status-Beta-orange)
@@ -12,11 +12,8 @@ This version focuses on simplicity — it runs instantly, fetches random questio
 
 ---
 
-## 🚀 Features (v1.1)
-- ✅ Player can choose the number of questions
-- ✅ Runs directly from the terminal — no menus or setup needed
-- ✅ Displays your final score after the quiz
-- ✅ Clean, minimal design for testing and learning purposes
+## 🚀 Features (v1.1.1)
+- ✅ Progress barr added
 
 ---
 
@@ -65,7 +62,6 @@ These include:
 
 - 🔄 Custom quiz options (number of questions, difficulty, categories)
 - 🎮 Menu system with multiple play modes
-- 📊 Progress bar and scoring animations
 - 📈 Question history and statistics
 
 ---
@@ -85,7 +81,7 @@ Check the **Issues** section to see what's being worked on or to report problems
 ## 🧾 License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-**Version:** 1.1 (Beta)  
+**Version:** 1.1.1 (Beta)  
 **Author:** OrellanaJheremiasT  
 **Repository:** [github.com/OrellanaJheremiasT/TRIVIA-QUIZ-APP](https://github.com/OrellanaJheremiasT/TRIVIA-QUIZ-APP)
 
