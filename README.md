@@ -12,7 +12,6 @@ This version focuses on simplicity — it runs instantly, fetches random questio
 
 ---
 
-
 ## 🚀 Features (v1.1.1)
 - ✅ Progress barr added
 
