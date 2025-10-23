@@ -29,6 +29,13 @@ def get_question_count():
             time.sleep(1.5)
 
 
+def progress_bar(current, total):
+    length = 20
+    completed = int((current / total) * length)
+    bar = "#" * completed + "-" * (length - completed)
+    print(f"[{bar}] {current}/{total}")
+
+
 
 def run_quiz():
     clear()
@@ -38,8 +45,10 @@ def run_quiz():
 
     questions = get_questions(questions_count)
     score = 0
+    total = questions_count
 
     for i, q in enumerate(questions, 1):
+        progress_bar(i, total)
         question = html.unescape(q["question"])
         correct = html.unescape(q["correct_answer"])
         options = [html.unescape(x) for x in q["incorrect_answers"]] + [correct]
