@@ -11,7 +11,6 @@ A lightweight **beta version** of a terminal-based trivia game that uses the [Op
 This version focuses on simplicity — it runs instantly, fetches random questions, and shows your score at the end.
 
 ---
-
 ## 🚀 Features (v1.1.1)
 - ✅ Progress barr added
 
