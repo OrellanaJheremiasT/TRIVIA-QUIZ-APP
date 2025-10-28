@@ -17,7 +17,7 @@ def get_question_count():
     while True:
         try:
             clear()
-            print("=== OPEN TRIVIA QUIZ ===\n")
+            banner()
             count = int(input("How many questions would you like? (1-50): "))
             if 1 <= count <= 50:
                 return count
@@ -34,10 +34,14 @@ def progress_bar(current, total):
     completed = int((current / total) * length)
     bar = "#" * completed + "-" * (length - completed)
     print(f"[{bar}] {current}/{total}")
+
+def banner():
+    print("╔" + "═" * 38 + "╗")
+    print("║{:^38}║".format("OPEN TRIVIA QUIZ APP"))
+    print("╚" + "═" * 38 + "╝\n")
     
 def run_quiz():
     clear()
-    print("=== OPEN TRIVIA QUIZ ===\n")
 
     questions_count = get_question_count()
 
@@ -46,6 +50,8 @@ def run_quiz():
     total = questions_count
 
     for i, q in enumerate(questions, 1):
+        clear()
+        banner()
         progress_bar(i, total)
         question = html.unescape(q["question"])
         correct = html.unescape(q["correct_answer"])
