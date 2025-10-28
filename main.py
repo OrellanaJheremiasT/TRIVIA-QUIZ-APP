@@ -34,9 +34,7 @@ def progress_bar(current, total):
     completed = int((current / total) * length)
     bar = "#" * completed + "-" * (length - completed)
     print(f"[{bar}] {current}/{total}")
-
-
-
+    
 def run_quiz():
     clear()
     print("=== OPEN TRIVIA QUIZ ===\n")
