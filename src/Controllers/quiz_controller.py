@@ -1,14 +1,6 @@
 from Models.api_model import get_questions, get_categories
-from views.ui import (
-    clear, 
-    banner,
-    progress_bar,
-    select_difficulty,
-    show_categories,
-    select_category,
-    select_question_count
-)
-
+from Models.supabase_model import save_player
+from views.ui import clear, banner, progress_bar, select_difficulty, show_categories, select_category, select_question_count
 import random, time, html
 
 def run_quiz():
@@ -17,13 +9,12 @@ def run_quiz():
 
     categories = get_categories()
     if not categories:
-        print(" Could not load categories.")
+        print("Could not load categories.")
         input("\nPress ENTER to exit...")
         return
 
     show_categories(categories)
     category = select_category(categories)
-
     clear()
     banner()
     difficulty = select_difficulty()
@@ -32,7 +23,7 @@ def run_quiz():
 
     questions = get_questions(amount=10, difficulty=difficulty, category=category)
     if not questions:
-        print(" No questions found for this category/difficulty combination.")
+        print("No questions found.")
         input("\nPress ENTER to exit...")
         return
 
@@ -55,37 +46,33 @@ def run_quiz():
         choice = input("\nYour answer (1-4): ")
         if choice.isdigit() and 1 <= int(choice) <= 4:
             if options[int(choice)-1] == correct:
-                print(" Correct!\n")
+                print("Correct!\n")
                 score += 1
             else:
-                print(f" Wrong. Correct: {correct}\n")
+                print(f"Wrong. Correct: {correct}\n")
         else:
-            print(" Invalid choice.\n")
+            print("Invalid choice.\n")
         time.sleep(1)
 
-    print(f" Final Score: {score}/{total}")
+    print(f"\nFinal Score: {score}/{total}")
+    name = input("Enter your name: ").strip()
+    save_player(name, score, total, difficulty)
     input("\nPress ENTER to exit...")
+
 def custom_quiz():
-    """Custom quiz where the player chooses category, difficulty, and question count."""
+
     clear()
     banner()
 
-    # --- Category selection ---
     categories = get_categories()
     show_categories(categories)
     category_id = select_category(categories)
-
-    # --- Difficulty selection ---
     difficulty = select_difficulty()
-
-    # --- Question count selection ---
     question_count = select_question_count()
 
-    # --- Get questions from API ---
     print("\nLoading questions...\n")
     questions = get_questions(amount=question_count, category=category_id, difficulty=difficulty)
 
-    # --- Quiz loop ---
     score = 0
     for i, q in enumerate(questions, 1):
         clear()
@@ -106,12 +93,14 @@ def custom_quiz():
             choice = 0
 
         if 1 <= choice <= 4 and options[choice - 1] == correct:
-            print(" Correct!\n")
+            print("Correct!\n")
             score += 1
         else:
-            print(f" Wrong. Correct answer: {correct}\n")
+            print(f"Wrong. Correct answer: {correct}\n")
 
         time.sleep(1.2)
 
     print(f"\nFinal Score: {score}/{len(questions)}")
+    name = input("Enter your name: ").strip()
+    save_player(name, score, len(questions), difficulty)
     input("\nPress ENTER to return to the menu...")

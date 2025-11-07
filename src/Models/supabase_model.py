@@ -1,42 +1,32 @@
+from supabase import create_client
 import os
-from datetime import datetime
 from dotenv import load_dotenv
-from supabase import create_client, Client 
+from datetime import datetime
 
-load_dotenv()
+# Load .env from the project root
+env_path = os.path.join(os.path.dirname(__file__), '..', '..', '.env')
+load_dotenv(dotenv_path=env_path)
+
 SUPABASE_URL = os.getenv("SUPABASE_URL")
 SUPABASE_KEY = os.getenv("SUPABASE_KEY")
 
-supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
+if not SUPABASE_URL or not SUPABASE_KEY:
+    raise Exception(" Missing SUPABASE_URL or SUPABASE_KEY in .env file")
 
-def save_player(name: str, score:int, total_questions:int, difficulty: str):
-    name = name.strip() if name else "Anonymous"
-    difficulty = difficulty or "Unknown"
+supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
 
-    if total_questions == 0:
-        raise ValueError("Total questions cannot be zero.")
-    if score < 0 or score > total_questions:
-        raise ValueError("Score must be between 0 and total questions.")
-    
-    player_data = {
+def save_player(name, score, total_questions, difficulty):
+
+    data = {
         "name": name,
         "score": score,
         "total_questions": total_questions,
         "difficulty": difficulty,
-        "date": datetime.now().isoformat()
+        "date_played": datetime.now().isoformat()
     }
-
-    res = supabase.table("players").insert(player_data).execute()
-
-    if res.error:
-       print("Error saving player data:", res.error)
-    else:
-         print("Player data saved successfully.")
+    supabase.table("players").insert(data).execute()
 
 def get_all_players():
-    res = supabase.table("players").select("*").order("date", desc=True).execute()
 
-
-
-
-
+    response = supabase.table("players").select("*").order("date_played", desc=True).execute()
+    return response.data

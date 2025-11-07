@@ -1,27 +1,28 @@
 from Controllers.quiz_controller import run_quiz, custom_quiz
+from Controllers.stats_controller import show_stats
 from views.ui import clear, banner
-import time
 
-def main_menu():
+def main():
     while True:
         clear()
         banner()
-        print("1) Quick Mode (30 random questions)")
-        print("2) Custom Quiz (choose everything)")
-        print("3) Exit")
-        
-        option = input("\nSelect an option: ")
-        if option == "1":
+        print("1. Play Standard Quiz")
+        print("2. Play Custom Quiz")
+        print("3. View Statistics")
+        print("4. Exit")
+
+        choice = input("\nChoose an option: ")
+
+        if choice == "1":
             run_quiz()
-        elif option == "2":
+        elif choice == "2":
             custom_quiz()
-        elif option == "3":
-            print("👋 See you next time!")
-            time.sleep(1)
+        elif choice == "3":
+            show_stats()
+        elif choice == "4":
             break
         else:
-            print(" Invalid option.")
-            time.sleep(1)
+            input("Invalid choice. Press ENTER to continue...")
 
 if __name__ == "__main__":
-    main_menu()
+    main()
