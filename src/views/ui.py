@@ -19,7 +19,7 @@ def show_categories(categories):
         print(f"{c['id']:>3}) {c['name']}")
 
 
-#! Si las miradas mataran]
+#! Si las miradas mataran
 #! La tuya me hizo el amor
 #! Se ve que tú estás a vapor
 #! Ella mata con traje y cuando se viste sport
