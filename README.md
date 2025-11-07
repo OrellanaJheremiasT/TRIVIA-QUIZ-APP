@@ -1,4 +1,4 @@
-# 🧠 Open Trivia Quiz (Terminal Edition) - v1.1.2
+# 🧠 Open Trivia Quiz (Terminal Edition) - v1.2
 
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue?logo=python)
 ![Version](https://img.shields.io/badge/Version-1.1.2-green)
