@@ -1,15 +1,41 @@
+from models.api_model import get_questions, get_categories
+from views.ui import (
+    clear,
+    banner,
+    progress_bar,
+    select_difficulty,
+    show_categories,
+    select_category,
+    select_question_count
+)
+
 import random, time, html
-from models.api_model import get_questions
-from views.ui import clear, banner, progress_bar, select_difficulty
 
 def run_quiz():
     clear()
     banner()
 
+    categories = get_categories()
+    if not categories:
+        print(" Could not load categories.")
+        input("\nPress ENTER to exit...")
+        return
+
+    show_categories(categories)
+    category = select_category(categories)
+
+    clear()
+    banner()
     difficulty = select_difficulty()
+
     input("\nPress ENTER to start the quiz...")
 
-    questions = get_questions(amount=10, difficulty=difficulty)
+    questions = get_questions(amount=10, difficulty=difficulty, category=category)
+    if not questions:
+        print(" No questions found for this category/difficulty combination.")
+        input("\nPress ENTER to exit...")
+        return
+
     score = 0
     total = len(questions)
 
@@ -39,4 +65,53 @@ def run_quiz():
 
     print(f" Final Score: {score}/{total}")
     input("\nPress ENTER to exit...")
+def custom_quiz():
+    """Custom quiz where the player chooses category, difficulty, and question count."""
+    clear()
+    banner()
 
+    # --- Category selection ---
+    categories = get_categories()
+    show_categories(categories)
+    category_id = select_category(categories)
+
+    # --- Difficulty selection ---
+    difficulty = select_difficulty()
+
+    # --- Question count selection ---
+    question_count = select_question_count()
+
+    # --- Get questions from API ---
+    print("\nLoading questions...\n")
+    questions = get_questions(amount=question_count, category=category_id, difficulty=difficulty)
+
+    # --- Quiz loop ---
+    score = 0
+    for i, q in enumerate(questions, 1):
+        clear()
+        banner()
+        progress_bar(i, question_count)
+        question = html.unescape(q["question"])
+        correct = html.unescape(q["correct_answer"])
+        options = [html.unescape(x) for x in q["incorrect_answers"]] + [correct]
+        random.shuffle(options)
+
+        print(f"Question {i}: {question}")
+        for idx, op in enumerate(options, 1):
+            print(f"{idx}) {op}")
+
+        try:
+            choice = int(input("\nYour answer (1-4): "))
+        except ValueError:
+            choice = 0
+
+        if 1 <= choice <= 4 and options[choice - 1] == correct:
+            print(" Correct!\n")
+            score += 1
+        else:
+            print(f" Wrong. Correct answer: {correct}\n")
+
+        time.sleep(1.2)
+
+    print(f"\nFinal Score: {score}/{len(questions)}")
+    input("\nPress ENTER to return to the menu...")
