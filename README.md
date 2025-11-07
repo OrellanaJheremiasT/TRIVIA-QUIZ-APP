@@ -1,89 +1,146 @@
-# 🧠 Open Trivia Quiz (Terminal Edition) - v1.2
+# 🧠 Open Trivia Quiz (Terminal Edition) - v2.0
 
-![Python](https://img.shields.io/badge/Python-3.8%2B-blue?logo=python)
-![Version](https://img.shields.io/badge/Version-1.2-green)
+![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python)
+![Version](https://img.shields.io/badge/Version-2.0-green)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
 ![Language](https://img.shields.io/badge/Language-English-lightgrey)
-![Status](https://img.shields.io/badge/Status-Beta-orange)
+![Status](https://img.shields.io/badge/Status-Stable-brightgreen)
 ![API](https://img.shields.io/badge/API-Open%20Trivia%20DB-9cf)
+![DB](https://img.shields.io/badge/Database-Supabase-3fcf8e?logo=supabase)
+![Connection](https://img.shields.io/badge/Supabase%20Connection-Active-success)
 
-A lightweight **beta version** of a terminal-based trivia game that uses the [Open Trivia Database API](https://opentdb.com/).  
-This version focuses on simplicity — it runs instantly, fetches random questions, and shows your score at the end.
+A **terminal-based trivia game** that connects to the [Open Trivia Database API](https://opentdb.com/)  
+and integrates with **Supabase** to store player data, scores, and statistics.  
+This version introduces user profiles, persistent scores, and improved game logic.
 
 ---
 
-## 🚀 Features (v1.2)
-- ✅  Player can select a difficulty level
-- ✅  Player can select a category
+## 🚀 Features (v2.0)
+- ✅ Player registration and login system (via Supabase)
+- ✅ Score saving and leaderboard tracking
+- ✅ Selectable difficulty and category
+- ✅ Dynamic question loading from Open Trivia DB
+- ✅ Clean MVC structure (Models, Views, Controllers)
+- ✅ Loading animations and progress bar
+- ✅ Clear, interactive terminal UI
 
 ---
 
 ## 📋 Table of Contents
 - [Installation](#installation)
 - [Usage](#usage)
-- [Features](#-features-v10)
+- [Project Structure](#project-structure)
+- [Features](#-features-v20)
 - [Planned Features](#-planned-features)
 - [Contributing](#-contributing)
 - [License](#-license)
 
 ---
 
-## Installation
+## 🧩 Project Structure
+```
+TRIVIA-QUIZ-APP/
+│
+├── src/
+│   ├── main.py                # Entry point
+│   ├── Controllers/
+│   │   └── quiz_controller.py
+│   ├── Models/
+│   │   ├── api_model.py       # Handles Open Trivia DB requests
+│   │   └── supabase_model.py  # Handles Supabase database actions
+│   ├── Views/
+│   │   └── ui.py              # Terminal UI components
+│   └── utils/                 # (optional) Helper functions, constants, etc.
+│
+├── README.md
+├── requirements.txt
+└── LICENSE
+```
+
+---
+
+## ⚙️ Installation
 
 ### Prerequisites
-- Python 3.8 or higher
-- `requests` library
+- Python **3.10+**
+- A **Supabase** account and project
+- Environment variables configured in a `.env` file
 
 ### Setup
 1. Clone this repository:
 ```bash
 git clone https://github.com/OrellanaJheremiasT/TRIVIA-QUIZ-APP.git
-cd TRIVIA-QUIZ-APP
-cd src
+cd TRIVIA-QUIZ-APP/src
 ```
-2. Install the required dependency:
+
+2. Install dependencies:
 ```bash
-pip install requests
+pip install -r requirements.txt
+```
+
+3. Create a `.env` file inside the `/src` directory:
+```
+SUPABASE_URL=your_project_url
+SUPABASE_KEY=your_api_key
 ```
 
 ---
 
-## Usage
-Run the game with a single command:
-
+## ▶️ Usage
+Run the game from the terminal:
 ```bash
 python main.py
 ```
 
+Then:
+1. Enter your player name (or log in if already registered)
+2. Choose category and difficulty
+3. Play and see your score saved automatically 🎯
+
 ---
 
-## 🧩 Planned Features
-Future updates will be added as issues in this repository.  
-These include:
+## 🧭 Example Gameplay
+```
+Welcome to Open Trivia Quiz!
 
-- 🔄 Custom quiz options (number of questions, difficulty, categories)
-- 🎮 Menu system with multiple play modes
-- 📈 Question history and statistics
+Enter your name: Jheremias
+Select category: Science
+Select difficulty: Medium
+Loading questions...
+
+Question 1: What is the chemical symbol for gold?
+> Au
+Correct ✅
+
+Final Score: 8/10
+Your score has been saved to Supabase.
+```
+
+---
+
+## 🔮 Planned Features
+Future updates (v2.1+) will include:
+- 🏆 Global leaderboard display
+- 🧮 Player statistics and history
+- 🎨 Improved terminal UI experience
+- 💾 Offline mode with cached questions
 
 ---
 
 ## 🤝 Contributing
-This is a beta version! Feel free to:
-
-- Report bugs and issues
+Contributions are welcome!  
+You can:
+- Report bugs via **Issues**
 - Suggest new features
-- Submit pull requests
-- Fork and customize for your own projects
+- Submit **Pull Requests**
 
-Check the **Issues** section to see what's being worked on or to report problems.
+Please follow the MVC organization used in `/src`.
 
 ---
 
 ## 🧾 License
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the **MIT License** — see the LICENSE file for details.
 
-**Version:** 1.2 (Beta)  
-**Author:** OrellanaJheremiasT  
+**Version:** 2.0 (Stable)  
+**Author:** [OrellanaJheremiasT](https://github.com/OrellanaJheremiasT)  
 **Repository:** [github.com/OrellanaJheremiasT/TRIVIA-QUIZ-APP](https://github.com/OrellanaJheremiasT/TRIVIA-QUIZ-APP)
-
-Future improvements will be tracked in the **Issues** section.
