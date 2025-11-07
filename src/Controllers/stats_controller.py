@@ -20,3 +20,4 @@ def show_stats():
         print(f"{p['name']:<15}{p['score']:<10}{p['total_questions']:<12}{p['difficulty']:<12}{p['date_played'][:19]:<20}")
 
     input("\nPress ENTER to return to the menu...")
+#test
