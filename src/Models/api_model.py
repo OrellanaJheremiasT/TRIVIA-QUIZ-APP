@@ -1,7 +1,5 @@
 import requests
 
-import requests
-
 def get_questions(amount=10, category=None, difficulty=None):
     
     url = "https://opentdb.com/api.php"

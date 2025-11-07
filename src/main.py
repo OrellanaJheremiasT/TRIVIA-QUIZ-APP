@@ -1,4 +1,4 @@
-from controllers.quiz_controller import run_quiz, custom_quiz
+from Controllers.quiz_controller import run_quiz, custom_quiz
 from views.ui import clear, banner
 import time
 
