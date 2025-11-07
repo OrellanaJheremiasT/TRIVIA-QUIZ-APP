@@ -13,7 +13,8 @@ This version focuses on simplicity — it runs instantly, fetches random questio
 ---
 
 ## 🚀 Features (v1.2)
-- ✅  Banner added
+- ✅  Player can select a difficulty level
+- ✅  Player can select a category
 
 ---
 
