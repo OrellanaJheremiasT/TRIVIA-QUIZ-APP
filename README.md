@@ -39,6 +39,7 @@ This version focuses on simplicity — it runs instantly, fetches random questio
 ```bash
 git clone https://github.com/OrellanaJheremiasT/TRIVIA-QUIZ-APP.git
 cd TRIVIA-QUIZ-APP
+cd src
 ```
 2. Install the required dependency:
 ```bash
