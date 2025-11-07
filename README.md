@@ -81,7 +81,7 @@ Check the **Issues** section to see what's being worked on or to report problems
 ## 🧾 License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-**Version:** 1.1.2 (Beta)  
+**Version:** 1.2 (Beta)  
 **Author:** OrellanaJheremiasT  
 **Repository:** [github.com/OrellanaJheremiasT/TRIVIA-QUIZ-APP](https://github.com/OrellanaJheremiasT/TRIVIA-QUIZ-APP)
 
