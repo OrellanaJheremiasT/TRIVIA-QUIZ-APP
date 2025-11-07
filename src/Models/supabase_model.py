@@ -3,7 +3,6 @@ import os
 from dotenv import load_dotenv
 from datetime import datetime
 
-# Load .env from the project root
 env_path = os.path.join(os.path.dirname(__file__), '..', '..', '.env')
 load_dotenv(dotenv_path=env_path)
 

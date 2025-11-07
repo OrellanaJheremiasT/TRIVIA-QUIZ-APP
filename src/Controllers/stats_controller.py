@@ -2,7 +2,6 @@ from Models.supabase_model import get_all_players
 from views.ui import clear, banner
 
 def show_stats():
-    """Display all player stats saved in Supabase."""
     clear()
     banner()
     print("=== PLAYER STATISTICS ===\n")
