@@ -12,7 +12,7 @@ This version focuses on simplicity — it runs instantly, fetches random questio
 
 ---
 
-## 🚀 Features (v1.1.2)
+## 🚀 Features (v1.2)
 - ✅  Banner added
 
 ---
