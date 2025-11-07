@@ -54,7 +54,6 @@ Run the game with a single command:
 ```bash
 python main.py
 ```
-The game will immediately start with 10 random trivia questions. Answer each question by typing the letter of your choice (a, b, c, d).
 
 ---
 
