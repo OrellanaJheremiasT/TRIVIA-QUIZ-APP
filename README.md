@@ -99,23 +99,6 @@ Then:
 
 ---
 
-## 🧭 Example Gameplay
-```
-Welcome to Open Trivia Quiz!
-
-Enter your name: Jheremias
-Select category: Science
-Select difficulty: Medium
-Loading questions...
-
-Question 1: What is the chemical symbol for gold?
-> Au
-Correct ✅
-
-Final Score: 8/10
-Your score has been saved to Supabase.
-```
-
 ---
 
 ## 🔮 Planned Features
