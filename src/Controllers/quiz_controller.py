@@ -1,6 +1,6 @@
-from models.api_model import get_questions, get_categories
+from Models.api_model import get_questions, get_categories
 from views.ui import (
-    clear,
+    clear, 
     banner,
     progress_bar,
     select_difficulty,
