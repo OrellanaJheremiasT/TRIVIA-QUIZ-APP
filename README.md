@@ -44,10 +44,10 @@ TRIVIA-QUIZ-APP/
 ├── src/
 │   ├── main.py                # Entry point
 │   ├── Controllers/
-│   │   ├──quiz_controller.py
-│   │   └──quiz_controller.py
+│   │   ├── quiz_controller.py
+│   │   └── quiz_controller.py
 │   ├── Models/
-│   │   ├──api_model.py       # Handles Open Trivia DB requests
+│   │   ├── api_model.py       # Handles Open Trivia DB requests
 │   │   └── supabase_model.py  # Handles Supabase database actions
 │   ├── Views/
 │   │   └── ui.py              # Terminal UI components
