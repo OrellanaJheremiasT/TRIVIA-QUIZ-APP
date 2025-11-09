@@ -2,6 +2,21 @@ from Models.api_model import get_questions, get_categories
 from Models.supabase_model import save_player
 from views.ui import clear, banner, progress_bar, select_difficulty, show_categories, select_category, select_question_count
 import random, time, html
+import re
+
+
+def get_player_name():
+    while True:
+        name = input("Enter your name: ").strip()
+        if not name:
+            print("Name cannot be empty.")
+        elif len(name) > 10:
+            print("Name too long (max 10 characters).")
+        elif not re.match(r'^[A-Za-z0-9 ]+$', name):
+            print("Only letters, numbers, and spaces are allowed.")
+        else:
+            return name
+        input("Press ENTER to try again...")
 
 def run_quiz():
     clear()
@@ -101,6 +116,6 @@ def custom_quiz():
         time.sleep(1.2)
 
     print(f"\nFinal Score: {score}/{len(questions)}")
-    name = input("Enter your name: ").strip()
+    name = get_player_name()
     save_player(name, score, len(questions), difficulty)
     input("\nPress ENTER to return to the menu...")

@@ -11,7 +11,7 @@ def main():
         print("3. View Statistics")
         print("4. Exit")
 
-        choice = input("\nChoose an option: ")
+        choice = input("\nChoose an option (1–4): ").strip()
 
         if choice == "1":
             run_quiz()
@@ -20,9 +20,11 @@ def main():
         elif choice == "3":
             show_stats()
         elif choice == "4":
+            print("\nGoodbye!")
             break
         else:
-            input("Invalid choice. Press ENTER to continue...")
+            print("\n Invalid choice. Please enter a number between 1 and 4.")
+            input("Press ENTER to try again...")
 
 if __name__ == "__main__":
     main()
