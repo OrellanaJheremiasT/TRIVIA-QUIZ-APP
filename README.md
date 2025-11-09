@@ -92,11 +92,9 @@ Then:
 ---
 
 ## 🔮 Planned Features
-Future updates (v2.1+) will include:
+Future updates (v3.0+) will include:
 - 🏆 Global leaderboard display
-- 🧮 Player statistics and history
 - 🎨 Improved terminal UI experience
-- 💾 Offline mode with cached questions
 
 ---
 
