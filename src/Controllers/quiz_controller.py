@@ -68,7 +68,7 @@ def run_quiz():
         time.sleep(1)
 
     print(f"\nFinal Score: {score}/{total}")
-    name = input("Enter your name: ").strip()
+    name = get_player_name()
     save_player(name, score, total, difficulty)
     input("\nPress ENTER to exit...")
 
