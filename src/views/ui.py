@@ -26,9 +26,12 @@ def select_category(categories):
                 return categories[cat_num - 1]['id']
             else:
                 clear()
+                banner()
                 print("Invalid category number. Please try again.")
                 input("Press ENTER to continue...")
         except ValueError:
+            clear()
+            banner()
             print("Please enter a valid number.")
             input("Press ENTER to continue...")
     
