@@ -1,4 +1,5 @@
 import os, sys, time
+from views.ui import clear
 
 def clear():
     os.system("cls" if os.name == "nt" else "clear")
@@ -25,6 +26,7 @@ def select_category(categories):
             if 1 <= cat_num <= len(categories):
                 return categories[cat_num - 1]['id']
             else:
+                clear()
                 print("Invalid category number. Please try again.")
                 input("Press ENTER to continue...")
         except ValueError:

@@ -8,15 +8,13 @@ import re
 def get_player_name():
     while True:
         name = input("Enter your name: ").strip()
-        if not name:
-            print("Name cannot be empty.")
-        elif len(name) > 10:
-            print("Name too long (max 10 characters).")
-        elif not re.match(r'^[A-Za-z0-9 ]+$', name):
-            print("Only letters, numbers, and spaces are allowed.")
-        else:
-            return name
-        input("Press ENTER to try again...")
+        if not re.match(r"^[A-Za-z0-9 ]", name):
+            print("Name can only contain letters, numbers, and spaces.")
+            continue
+        if len(name) == 0 or len(name) > 10:
+            print("Name must be between 1 and 10 characters.")
+            continue
+        return name
 
 def run_quiz():
     clear()
