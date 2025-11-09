@@ -53,6 +53,7 @@ TRIVIA-QUIZ-APP/
 │   │   └── ui.py              # Terminal UI components
 │   └── utils/                 # (optional) Helper functions, constants, etc.
 │
+├── .env
 ├── README.md
 ├── requirements.txt
 └── LICENSE
@@ -78,13 +79,6 @@ cd TRIVIA-QUIZ-APP/src
 ```bash
 pip install -r requirements.txt
 ```
-
-3. Create a `.env` file inside the `/src` directory:
-```
-SUPABASE_URL=your_project_url
-SUPABASE_KEY=your_api_key
-```
-
 ---
 
 ## ▶️ Usage
