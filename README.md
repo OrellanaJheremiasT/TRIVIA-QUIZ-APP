@@ -63,11 +63,6 @@ TRIVIA-QUIZ-APP/
 
 ## ⚙️ Installation
 
-### Prerequisites
-- Python **3.10+**
-- A **Supabase** account and project
-- Environment variables configured in a `.env` file
-
 ### Setup
 1. Clone this repository:
 ```bash
